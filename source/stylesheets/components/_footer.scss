@@ -1,0 +1,36 @@
+.footer {
+  background-color: $blue;
+  padding: $base-spacing 0;
+}
+
+.footer__container {
+  @include container;
+}
+
+.footer__nav {
+  float: left;
+}
+
+.footer__nav-list-item {
+  display: inline-block;
+  margin-right: $base-spacing;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__link {
+  text-decoration: none;
+  color: white;
+
+  &:hover,
+  &:active {
+    color: shade(white, 10%);
+  }
+}
+
+.footer__link--credit {
+  float: right;
+  opacity: 0.75;
+}

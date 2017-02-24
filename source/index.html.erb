@@ -1,0 +1,41 @@
+---
+title: Symbolisera - a Sketch plugin
+---
+
+<section class="hero">
+  <%= inline_svg(
+    'pattern',
+    class: 'hero__pattern')
+  %>
+  <div class="hero__logo-container">
+    <%= inline_svg('logo') %>
+  </div>
+</section>
+
+<section class="section about">
+  <div class="section__container">
+    <p>
+      A sketch plugin for creating several symbols at once.
+      <br>
+      Works especially great together with <a href="https://github.com/rodi01/RenameIt" target="_blank">RenameIt</a>.
+    </p>
+    <%= link_to "Download", "#", class: "button" %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section__container how-to">
+    <div class="how-to__description">
+      <span>
+        Select layers.
+        <br>
+        Press ^+⌘+R.
+        <br>
+        Easy peasy lemon squeezy.
+      </span>
+    </div>
+    <div class="how-to__image">
+      <%= image_tag "symbolisera.gif", alt: "Symbolisera in action" %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,4 @@
+.section__container {
+  @include container;
+  padding: $base-spacing * 2 0;
+}

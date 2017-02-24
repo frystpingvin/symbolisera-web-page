@@ -1,0 +1,21 @@
+$hero-pattern-size: 800px;
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  min-height: $hero-pattern-size / 2;
+}
+
+.hero__pattern {
+  @include position(absolute, -$hero-pattern-size / 2 null 0 -5px);
+  max-width: $hero-pattern-size;
+  transform-origin: center;
+  animation: $long-duration $base-timing rotateIn;
+}
+
+.hero__logo-container {
+  @include container;
+  flex: 1 1 auto;
+  animation: $base-duration $base-timing fadeIn;
+}
