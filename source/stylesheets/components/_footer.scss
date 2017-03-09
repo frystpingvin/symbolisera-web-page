@@ -1,14 +1,21 @@
 .footer {
-  background-color: $blue;
-  padding: $base-spacing 0;
+  background-color: $dark-blue;
+  background: linear-gradient(to bottom, $blue 0%, $dark-blue 100%);
 }
 
 .footer__container {
   @include container;
+  padding: $base-spacing;
+  text-align: center;
 }
 
 .footer__nav {
-  float: left;
+  margin-bottom: $base-spacing;
+
+  @include breakpoint($medium-screen) {
+    float: left;
+    margin-bottom: 0;
+  }
 }
 
 .footer__nav-list-item {
@@ -31,6 +38,9 @@
 }
 
 .footer__link--credit {
-  float: right;
   opacity: 0.75;
+
+  @include breakpoint($medium-screen) {
+    float: right;
+  }
 }

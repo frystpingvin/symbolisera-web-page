@@ -21,7 +21,7 @@
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  @include box-shadow(2);
+  @include box-shadow;
 
   &:hover,
   &:focus {
@@ -30,7 +30,7 @@
   }
 
   &:active {
-    @include box-shadow;
+    @include box-shadow('deep');
   }
 
   &:disabled {

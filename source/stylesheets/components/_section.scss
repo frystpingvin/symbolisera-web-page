@@ -1,4 +1,4 @@
 .section__container {
   @include container;
-  padding: $base-spacing * 2 0;
+  padding: $base-spacing * 2 $base-spacing;
 }

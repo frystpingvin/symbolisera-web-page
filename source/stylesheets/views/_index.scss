@@ -1,34 +1,59 @@
+$arrow-size: 20px;
+
 .about {
   background-color: $light-gray;
   text-align: center;
+  animation: fadeInUp $base-duration $base-timing 200ms backwards;
 }
 
 .how-to {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  animation: fadeInUp $base-duration $base-timing 400ms backwards;
+
+  @include breakpoint($medium-screen) {
+    flex-direction: row;
+  }
 }
 
 .how-to__description {
   position: relative;
-  flex: 0 0 span(3);
-  margin-right: gutter();
   padding: $base-spacing;
-  background-color: $light-gray;
-  border-radius: $base-border-radius;
+  margin-top: $base-spacing;
+  background-color: $blue;
+  border-radius: $large-border-radius;
+  color: white;
   @include box-shadow(2);
 
   &:after {
-    $arrow-size: 20px;
-    position: absolute;
-    right: -$arrow-size + 5px;
-  	top: 50%;
-  	content: "▶";
-    color: $light-gray;
+    @include position(absolute, -$arrow-size 50% null null);
+  	content: "▲";
+    color: $blue;
     font-size: $arrow-size;
   	pointer-events: none;
-  	border-left-color: $light-gray;
-  	margin-top: -$arrow-size / 2;
-    text-shadow: 2px 0px 4px rgba(0,0,0,0.19);
+  	border-bottom-color: $blue;
+  	margin-right: -$arrow-size / 2;
+    text-shadow: 4px 0px 8px rgba(0,0,0,0.08);
+  }
+
+  @include breakpoint($medium-screen) {
+    flex: 0 0 span(4);
+    order: 1;
+    margin-right: gutter();
+
+    &:after {
+      @include position(null, 50% -4px null null);
+    	content: "▶";
+      border-bottom-color: transparent;
+    	border-left-color: $blue;
+    	margin-top: -$arrow-size / 2;
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoint($large-screen) {
+    flex: 0 0 span(3);
   }
 }
 
@@ -37,4 +62,8 @@
   flex: 1 1 auto;
   border-radius: $base-border-radius;
   @include box-shadow(2);
+
+  @include breakpoint($medium-screen) {
+    order: 2;
+  }
 }

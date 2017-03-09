@@ -1,21 +1,43 @@
-$hero-pattern-size: 800px;
+$pattern-size: 400px;
+$medium-pattern-size: 600px;
+$large-pattern-size: 800px;
 
 .hero {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  min-height: $hero-pattern-size / 2;
+  min-height: $pattern-size / 2;
+
+  @include breakpoint($medium-screen) {
+    min-height: $medium-pattern-size / 2;
+  }
+
+  @include breakpoint($large-screen) {
+    min-height: $large-pattern-size / 2;
+  }
 }
 
 .hero__pattern {
-  @include position(absolute, -$hero-pattern-size / 2 null 0 -5px);
-  max-width: $hero-pattern-size;
+  @include position(absolute, -$pattern-size / 2 + 35px null 0 -5px);
+  max-width: $pattern-size;
   transform-origin: center;
-  animation: $long-duration $base-timing rotateIn;
+  // animation: $long-duration $base-timing rotateIn;
+  z-index: $z-index-3;
+
+  @include breakpoint($medium-screen) {
+    @include position(absolute, -$medium-pattern-size / 2 null 0 -5px);
+    max-width: $medium-pattern-size;
+  }
+
+  @include breakpoint($large-screen) {
+    @include position(absolute, -$large-pattern-size / 2 null 0 -5px);
+    max-width: $large-pattern-size;
+  }
 }
 
 .hero__logo-container {
   @include container;
   flex: 1 1 auto;
-  animation: $base-duration $base-timing fadeIn;
+  animation: fadeInUp $base-duration $base-timing backwards;
+  z-index: $z-index-2;
 }
